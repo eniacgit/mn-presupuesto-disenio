@@ -55,17 +55,12 @@
       <bpmn:incoming>SequenceFlow_05b2o7r</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_113wnyl</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="SequenceFlow_14l83nr" name="Rechazado" sourceRef="ExclusiveGateway_0d3d5ls" targetRef="Task_1smneiw">
+    <bpmn:sequenceFlow id="SequenceFlow_14l83nr" name="Rechazado" sourceRef="ExclusiveGateway_0d3d5ls" targetRef="EndEvent_1fetjz1">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{not aprobar}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:serviceTask id="Task_1smneiw" name="Persistir presupuesto No aprobado en la BD" camunda:class="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.controladores.PersistirPresupuestoNoAprobadoDelegate">
-      <bpmn:incoming>SequenceFlow_14l83nr</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0isrmq4</bpmn:outgoing>
-    </bpmn:serviceTask>
     <bpmn:endEvent id="EndEvent_1fetjz1" name="Presupuesto rechazado">
-      <bpmn:incoming>SequenceFlow_0isrmq4</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_14l83nr</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="SequenceFlow_0isrmq4" sourceRef="Task_1smneiw" targetRef="EndEvent_1fetjz1" />
     <bpmn:textAnnotation id="TextAnnotation_1tnapbz">
       <bpmn:text>Se crea el Nro de cotización a partir de la fecha actual</bpmn:text>
     </bpmn:textAnnotation>
@@ -74,6 +69,14 @@
       <bpmn:text>Se cargan datos del presupuesto</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:association id="Association_05pw1vj" sourceRef="Task_1n2y0rh" targetRef="TextAnnotation_0obtkro" />
+    <bpmn:textAnnotation id="TextAnnotation_0pgzz0f">
+      <bpmn:text>Se genera presupuesto en pdf y se envía al cliente</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0qpvysx" sourceRef="Task_0pfz5tf" targetRef="TextAnnotation_0pgzz0f" />
+    <bpmn:textAnnotation id="TextAnnotation_0x6b6yw">
+      <bpmn:text>Presupuesto en espera</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_18b11zb" sourceRef="Task_0qdmsrj" targetRef="TextAnnotation_0x6b6yw" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="mn_presupuesto_disenio">
@@ -188,23 +191,30 @@
       <bpmndi:BPMNEdge id="SequenceFlow_14l83nr_di" bpmnElement="SequenceFlow_14l83nr">
         <di:waypoint x="1035" y="145" />
         <di:waypoint x="1035" y="236" />
-        <di:waypoint x="1133" y="236" />
+        <di:waypoint x="1306" y="236" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1050" y="212" width="56" height="14" />
+          <dc:Bounds x="1055" y="216" width="56" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="ServiceTask_15ukhqn_di" bpmnElement="Task_1smneiw">
-        <dc:Bounds x="1133" y="196" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_1fetjz1_di" bpmnElement="EndEvent_1fetjz1">
         <dc:Bounds x="1306" y="218" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1293" y="261" width="62" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="SequenceFlow_0isrmq4_di" bpmnElement="SequenceFlow_0isrmq4">
-        <di:waypoint x="1233" y="236" />
-        <di:waypoint x="1306" y="236" />
+      <bpmndi:BPMNShape id="TextAnnotation_0pgzz0f_di" bpmnElement="TextAnnotation_0pgzz0f">
+        <dc:Bounds x="640" y="216" width="100" height="68" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0qpvysx_di" bpmnElement="Association_0qpvysx">
+        <di:waypoint x="724" y="160" />
+        <di:waypoint x="703" y="216" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_0x6b6yw_di" bpmnElement="TextAnnotation_0x6b6yw">
+        <dc:Bounds x="803" y="216" width="100" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_18b11zb_di" bpmnElement="Association_18b11zb">
+        <di:waypoint x="886" y="160" />
+        <di:waypoint x="862" y="216" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
