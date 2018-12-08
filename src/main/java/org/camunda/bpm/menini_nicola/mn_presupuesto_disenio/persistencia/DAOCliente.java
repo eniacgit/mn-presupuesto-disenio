@@ -70,4 +70,40 @@ public class DAOCliente {
 		}		
 		return rowCount;
 	}
+	
+	
+	public int obtenerIdCliente(String nombre) {
+		AccesoBD accesoBD = new AccesoBD();		
+		Connection con = accesoBD.conectarBD();
+		Consultas consultas = new Consultas();
+		
+		int idCliente = 0;
+		String select = consultas.obtenerIdCliente();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			pstmt = con.prepareStatement(select);
+			pstmt.setString(1, nombre);
+			rs = pstmt.executeQuery();
+			rs.next();
+			idCliente = rs.getInt(1);
+						
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				rs.close();
+				pstmt.close();
+				accesoBD.desconectarBD(con);
+			} catch (SQLException e) {
+				Log.error(e + "ERROR 2");
+				System.out.println(">> ERROR 2");
+				e.printStackTrace();
+			}			
+		}				
+		return idCliente;
+	}
 }

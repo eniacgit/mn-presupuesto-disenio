@@ -22,12 +22,20 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.modelo.Cliente;
+import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.modelo.ClientePresupuesto;
+import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.modelo.Presupuesto;
+import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.modelo.Producto;
 import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.persistencia.AccesoBD;
 import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.persistencia.DAOCliente;
+import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.persistencia.DAOClientePresupuesto;
 import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.persistencia.DAOPresupuestoDisenio;
+import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.persistencia.DAOProducto;
 import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOArchivoAdjunto;
 import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOCliente;
+import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOClientePresupuesto;
 import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOEmail;
+import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOPresupuesto;
+import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOProducto;
 import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOReporte;
 
 import net.sf.jasperreports.engine.JREmptyDataSource;
@@ -209,5 +217,66 @@ public class Fachada implements IFachada{
 			transport.sendMessage(message, message.getAllRecipients());
 			transport.close();		
 		}
+	
+	@Override
+	public int insertarPresupuesto(VOPresupuesto voPresupuesto)  {
+		DAOPresupuestoDisenio dao = new DAOPresupuestoDisenio();
+		Presupuesto presupuesto = new Presupuesto();
+		
+		presupuesto.setCotizacion(voPresupuesto.getCotizacion());
+		presupuesto.setFecha(voPresupuesto.getFecha());
+		presupuesto.setMoneda(voPresupuesto.getMoneda());
+		presupuesto.setCosto(voPresupuesto.getCosto());
+		presupuesto.setCondicionesVenta(voPresupuesto.getCondicionesVenta());
+		presupuesto.setDescripcion(voPresupuesto.getDescripcion());
+		
+		return dao.insertarPresupuesto(presupuesto);
+	}
+	
+	@Override
+	public int insertarClientePresupuesto(VOClientePresupuesto voClientePresupuesto) {
+		DAOClientePresupuesto dao = new DAOClientePresupuesto();
+		ClientePresupuesto clientePresupuesto = new ClientePresupuesto();
+		
+		clientePresupuesto.setEstado(voClientePresupuesto.getEstado());
+		clientePresupuesto.setIdCliente(voClientePresupuesto.getIdCliente());
+		clientePresupuesto.setIdPresupuesto(voClientePresupuesto.getIdPresupuesto());
+		
+		return dao.insertarClientePresupuesto(clientePresupuesto);
+	}
+	
+	@Override
+	public int obtenerIdCliente(String nombre) {
+		DAOCliente dao = new DAOCliente();
+		return dao.obtenerIdCliente(nombre);
+	}
+	
+	@Override
+	public int obtenerIdPresupuesto(String cotizacion) {
+		DAOPresupuestoDisenio dao = new DAOPresupuestoDisenio();
+		return dao.obtenerIdPresupuesto(cotizacion);
+	}
+	
+	@Override
+	public int inserarProducto(VOProducto voProducto) {
+		DAOProducto dao = new DAOProducto();
+		Producto producto = new Producto();
+		
+		producto.setNombre(voProducto.getNombre());
+		producto.setDescripcion(voProducto.getDescripcion());
+		producto.setCosto(voProducto.getCosto());
+		producto.setDescuento(voProducto.getDescuento());
+		producto.setSobreCosto(voProducto.getSobreCosto());
+		producto.setIdCategoria(voProducto.getIdCategoria());
+		producto.setIdPresupuesto(voProducto.getIdPresupuesto());
+		
+		return dao.inserarProducto(producto);
+	}
+	
+	@Override
+	public int obtenerIdCategoria(String categoria) {
+		DAOProducto dao = new DAOProducto();
+		return dao.obtenerIdCategoria(categoria);
+	}
 
 }

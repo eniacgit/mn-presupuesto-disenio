@@ -1,39 +1,30 @@
-package org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects;
+package org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.modelo;
 
 import java.util.Date;
 
-public class VOPresupuesto {
-	private int idPresupuesto;
-	private String cotizacion;
-	private String fecha;
-	private String moneda;
-	private float costo;
-	private String condicionesVenta;
-	private String descripcion;
+public class Presupuesto {
 	
-	public VOPresupuesto() {
+	protected String cotizacion;
+	protected String fecha;
+	protected String moneda;
+	protected float costo;
+	protected String condicionesVenta;
+	protected String descripcion;
+	
+	public Presupuesto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public VOPresupuesto(int idPresupuesto, String cotizacion, String fecha, String moneda, float costo,
-			String condicionesVenta, String descripcion) {
+	public Presupuesto(String cotizacion, String fecha, String moneda, float costo, String condicionesVenta,
+			String descripcion) {
 		super();
-		this.idPresupuesto = idPresupuesto;
 		this.cotizacion = cotizacion;
 		this.fecha = fecha;
 		this.moneda = moneda;
 		this.costo = costo;
 		this.condicionesVenta = condicionesVenta;
 		this.descripcion = descripcion;
-	}
-
-	public int getIdPresupuesto() {
-		return idPresupuesto;
-	}
-
-	public void setIdPresupuesto(int idPresupuesto) {
-		this.idPresupuesto = idPresupuesto;
 	}
 
 	public String getCotizacion() {
@@ -82,8 +73,5 @@ public class VOPresupuesto {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
-	
-	
-	
+	}	
 }

@@ -27,4 +27,36 @@ public class Consultas {
 		return consulta;
 	}
 	
+	public String insertarPresupuesto(){
+		String consulta = "INSERT INTO mn_presupuesto (cotizacion,fecha,moneda,costo,condicionesVenta,descripcion) VALUES(?,?,?,?,?,?);";
+		return consulta;
+	}
+	
+	public String insertarClientePresupuesto() {
+		String consulta ="INSERT INTO mn_cliente_presupuesto (estado, idCliente, idPresupuesto) VALUES (?,?,?);";
+		return consulta;	
+	}
+	
+	public String obtenerIdCliente() {
+		String consulta = "SELECT idCliente FROM mn_cliente WHERE nombre = ?;";
+		return consulta;
+	}
+	
+	public String obtenerIdPresupuesto() {
+		String consulta = "SELECT idPresupuesto FROM mn_presupuesto WHERE cotizacion = ?;";
+		return consulta;
+	}
+	
+	public String insertarProducto() {
+		String consulta="\n" + 
+				"INSERT INTO mn_producto (nombre,descripcion,costo,descuento,sobreCosto,idCategoria,idPresupuesto) VALUES (?,?,?,?,?,?,?);";
+		return consulta;
+	}
+	
+	public String obtenerIdCategoria() {
+		String consulta="\n" + 
+				"SELECT idCategoria FROM mn_categoria WHERE nombre=?;";
+		return consulta;
+	}
+	
 }
