@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" 
+    name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.controladores.GenerarCotizacionDelegate" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/controladores/GenerarCotizacionDelegate.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="95" width="309" x="-81" y="12"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" 
+    name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.controladores.PersistirPresupuestoAprobadoDelegate" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/controladores/PersistirPresupuestoAprobadoDelegate.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="113" width="309" x="268" y="12"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" 
+    name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.controladores.PersistirPresupuestoNoAprobadoDelegate" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/controladores/PersistirPresupuestoNoAprobadoDelegate.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="113" width="309" x="617" y="12"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" 
+    name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.controladores.EnviarPresupuestoDelegate" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/controladores/EnviarPresupuestoDelegate.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="113" width="309" x="966" y="12"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="5" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.logica.IFachada" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/logica/IFachada.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="73" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="6" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.logica.Fachada" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/logica/Fachada.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="73" y="297"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.modelo.Cliente" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/modelo/Cliente.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="410" y="331"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.modelo.Presupuesto" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/modelo/Presupuesto.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="733" y="358"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.modelo.ClientePresupuesto" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/modelo/ClientePresupuesto.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1056" y="277"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.modelo.Producto" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/modelo/Producto.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1067" y="669"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.persistencia.AccesoBD" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/persistencia/AccesoBD.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="388" y="708"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.persistencia.Consultas" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/persistencia/Consultas.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="731" y="726"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.persistencia.DAOCliente" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/persistencia/DAOCliente.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="82" y="944"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" 
+    name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.persistencia.DAOClientePresupuesto" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/persistencia/DAOClientePresupuesto.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="406" y="1027"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.persistencia.DAOProducto" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/persistencia/DAOProducto.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="766" y="1013"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" 
+    name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.persistencia.DAOPresupuestoDisenio" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/persistencia/DAOPresupuestoDisenio.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1086" y="1002"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOPresupuesto" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/valueObjects/VOPresupuesto.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="102" y="1349"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOReporte" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/valueObjects/VOReporte.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="633" y="1673"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOProducto" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/valueObjects/VOProducto.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="94" y="2527"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOEmail" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/valueObjects/VOEmail.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1183" y="1286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" 
+    name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOArchivoAdjunto" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/valueObjects/VOArchivoAdjunto.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1181" y="1715"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" 
+    name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOClientePresupuesto" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/valueObjects/VOClientePresupuesto.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="441" y="2419"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOCliente" 
+    project="mn_presupuesto_disenio" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/valueObjects/VOCliente.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="788" y="2473"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="24">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="25" name="lstArchivosAdjuntos"/>      
+      <multiplicity id="26" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="27">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <association id="28">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="29" name="fachada"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

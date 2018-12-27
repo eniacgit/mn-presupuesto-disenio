@@ -1,35 +1,26 @@
-<h4>
-	<strong>Datos del Cliente:</strong>
-</h4>
+<center>
+	<strong>Presupuesto Diseño</strong>
+	<p>Construcción del Presupuesto</p>
+</center>
 
-  
 <form class="form-horizontal" >
 
   <script cam-script type="text/form-script">	
   </script>
+
+  <h4>
+	<strong>Datos del Cliente:</strong>
+  </h4>
   
   <div class="row">
   	<div class="col-xs-9">
   		<div class="control-group">
   			<label class="control-label">Cliente</label>
       		<div class="controls">
-      			<input type="text"
-      		 		class= "form-control"
-      		 		name="CLIENTE" 
-             		cam-variable-name="CLIENTE"
-             		cam-variable-type="String"
-             		maxlength=100
-             		required
-             		ng-model="CLIENTE"
-             		readonly
-             		class="form-control" />
-             
-         			<!--validar ingreso de cliente-->
-				      <p>
-				      	<span style="color:red" ng-show="form.CLIENTE.$dirty && form.CLIENTE.$invalid">
-				  		<span ng-show="form.CLIENTE.$error.required">cliente es obligatorio</span>
-				  		</span>
-				      </p>      		
+      			<input class= "form-control"
+            		   cam-variable-name="CLIENTE"
+             		   cam-variable-type="String"
+             		   readonly />
       		</div>  		
   		</div>  	
   	</div>
@@ -51,24 +42,12 @@
   <div class="row">
   	<div class="col-xs-3">
   		<div class="control-group">
-  			<label for="CELULAR" class="control-label">Celular *</label>
+  			<label for="CELULAR" class="control-label">Celular</label>
       		<div class="control">
-      			<input type="text" 
-      		 		class= "form-control"
-      		 		name="CELULAR" 
-             		cam-variable-name="CELULAR"
-             		cam-variable-type="String"
-             		ng-pattern="/^0[\d]{8}$/"
-             		ng-model="CELULAR" 
-             		required
-             		class="form-control" />
-             
-       				<!--validar ingreso de celular-->
-			       <p>
-			       	 	<span style="color:red" ng-show="form.CELULAR.$dirty && form.CELULAR.$invalid">
-			  			<span ng-show="form.CELULAR.$error.required">email es obligatorio</span>
-			  			</span>
-			       </p>      		
+      			<input class="form-control" 
+             		   cam-variable-name="CELULAR"
+             	       cam-variable-type="String"
+             		   readonly />      		
       		</div>	  		
   		</div>
   	</div>
@@ -77,37 +56,22 @@
   		<div class="control-group">
   			<label for="TEL" class="control-label">Tel</label>
       		<div class="controls">
-      			<input type="text" 
-             		cam-variable-name="TEL"
-             		cam-variable-type="String"
-             		ng-pattern="/^\d{8}$/"
-             		ng-model="TEL"
-             		class="form-control" />      		
+      			<input class="form-control"
+             		   cam-variable-name="TEL"
+             		   cam-variable-type="String"
+             		   readonly />		
       		</div>  		
   		</div>
   	</div>
   	
   	<div class="col-xs-6">
   		<div class="control-group">
-  			<label for="EMAIL" class="control-label">E-mail *</label>
+  			<label for="EMAIL" class="control-label">E-mail</label>
       		<div class="controls">
-      			<input type="text" 
-      				 class="form-control"
-      		 		 name="EMAIL"
-             		cam-variable-name="EMAIL"
-             		cam-variable-type="String"
-             		maxlength=50
-             		required
-             		ng-pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/"
-             		ng-model="EMAIL"
-             		class="form-control" />  
-             
-      				<!--validar ingreso de email-->
-				      <p>
-				      	<span style="color:red" ng-show="form.EMAIL.$dirty && form.EMAIL.$invalid">
-				  		<span ng-show="form.EMAIL.$error.required">email es obligatorio</span>
-				  		</span>
-				      </p>
+      			<input class="form-control"
+             		   cam-variable-name="EMAIL"
+             		   cam-variable-type="String"
+             		   readonly /> 
       		</div>  		
   		</div>
   	</div>  
@@ -125,11 +89,10 @@
   		<div class="control-group">
   			<label for="COTIZACION" class="control-label">Cotización</label>
   			<div class="controls">
-	      		<input type="text" 
-	             cam-variable-name="COTIZACION"
-	             cam-variable-type="String"
-	             readonly
-	             class="form-control" />
+	      		<input class="form-control"
+      		 		   cam-variable-name="COTIZACION"
+             		   cam-variable-type="String"
+             		   readonly />
       		</div>  		
   		</div>      	  	
   	</div>  
@@ -149,7 +112,7 @@
   </div>
   
   <div class="row">
-  	<div class="col-xs-12">
+  	<div class="col-xs-6">
   		<div class="control-group">
   			<label for="PRODUCTO_SELECCIONADO" class="control-label">Producto</label>
   			<div class="controls">
@@ -163,11 +126,11 @@
   </div>
   
   <div class="row">
-  	<div class="col-xs-12">
+  	<div class="col-xs-6">
   		<div class="control-group">
   			<label for="DESCRIPCION" class="control-label">Descripción</label>
   			<div class="controls">
-   				<textarea cam-variable-name="DESCRIPCION" cam-variable-type="String" rows= 4  class= "form-control" ></textarea>
+   				<textarea cam-variable-name="DESCRIPCION" cam-variable-type="String" rows= 6  class= "form-control" ></textarea>
    			</div>	
   		</div>   		   	    
   	</div>  
