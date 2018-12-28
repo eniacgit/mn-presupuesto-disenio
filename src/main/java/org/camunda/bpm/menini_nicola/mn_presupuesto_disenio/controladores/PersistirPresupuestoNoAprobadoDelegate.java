@@ -30,8 +30,7 @@ public class PersistirPresupuestoNoAprobadoDelegate implements JavaDelegate{
 		voCliente.setNombre((String) execution.getVariable("CLIENTE"));
 		voCliente.setCelular((String)execution.getVariable("CELULAR"));
 		voCliente.setTelefono((String)execution.getVariable("TEL"));
-		voCliente.setEmail((String) execution.getVariable("EMAIL"));
-		
+		voCliente.setEmail((String) execution.getVariable("EMAIL"));		
 		
 		LOG.info("\n\n=== mn_cliente ======================================================================");
 		int rowCount = 0;
@@ -64,12 +63,9 @@ public class PersistirPresupuestoNoAprobadoDelegate implements JavaDelegate{
 		voPresupuesto.setMoneda(moneda);
 		voPresupuesto.setCosto(Float.parseFloat((String)execution.getVariable("PRECIO")));
 		voPresupuesto.setCondicionesVenta((String) execution.getVariable("CONDICIONES"));
-		voPresupuesto.setDescripcion((String) execution.getVariable("DESCRIPCION"));
+		voPresupuesto.setDescripcion((String) execution.getVariable("DESCRIPCION"));		
 		
-		
-		
-		// persistir en tabla mn_cliente_presupuesto
-		
+		// persistir en tabla mn_cliente_presupuesto		
 		rowCount = 0;
 		rowCount = iFachada.insertarPresupuesto(voPresupuesto);
 		
@@ -82,8 +78,7 @@ public class PersistirPresupuestoNoAprobadoDelegate implements JavaDelegate{
 		
 		// persistir en tabla mn_cliente_presupuesto
 		int idCliente = iFachada.obtenerIdCliente(voCliente.getNombre());
-		LOG.info("\n\n## idCliente: " + idCliente);
-		
+		LOG.info("\n\n## idCliente: " + idCliente);		
 		
 		int idPresupuesto = iFachada.obtenerIdPresupuesto(voPresupuesto.getCotizacion());
 		LOG.info("\n\n## idPresupuesto: " + idPresupuesto);		
@@ -106,8 +101,7 @@ public class PersistirPresupuestoNoAprobadoDelegate implements JavaDelegate{
 		if (rowCount > 0)
 			LOG.info("\n## Se insertó cliente-presupuesto en la BD.\nCantidad de registros afectados: " + rowCount);
 		else
-			LOG.info("\n## Cantidad de registros afectados: " + rowCount + "\nNo se insertó cliente-presupuesto en la BD");
-		
+			LOG.info("\n## Cantidad de registros afectados: " + rowCount + "\nNo se insertó cliente-presupuesto en la BD");		
 		
 		// persistir datos del producto en mn_producto
 		String nombreProducto = (String)execution.getVariable("PRODUCTO_SELECCIONADO");
@@ -128,11 +122,7 @@ public class PersistirPresupuestoNoAprobadoDelegate implements JavaDelegate{
 		if (rowCount > 0)
 			LOG.info("\n## Se insertó producto en la BD.\nCantidad de registros afectados: " + rowCount);
 		else
-			LOG.info("\n## Cantidad de registros afectados: " + rowCount + "\nNo se insertó producto en la BD");
-
-		
-		
-			
+			LOG.info("\n## Cantidad de registros afectados: " + rowCount + "\nNo se insertó producto en la BD");			
 	}
 
 }

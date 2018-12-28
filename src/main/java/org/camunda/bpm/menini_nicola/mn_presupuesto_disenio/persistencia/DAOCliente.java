@@ -52,6 +52,11 @@ public class DAOCliente {
 			pstmt.setString(2, cliente.getEmail());
 			pstmt.setString(3, cliente.getTelefono());
 			pstmt.setString(4, cliente.getCelular());
+			pstmt.setString(5, cliente.getRut());
+			pstmt.setString(6, cliente.getRazonSocial());
+			pstmt.setString(7, cliente.getTipo());
+			pstmt.setString(8, cliente.getDireccion());		
+			
 			rowCount = pstmt.executeUpdate();			
 		} catch (SQLException e) {
 			Log.error(e + "EEROR 1");

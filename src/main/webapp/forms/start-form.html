@@ -1,5 +1,7 @@
 <center>
-	<strong>Presupuesto Diseño</strong>
+	<h3>
+		<strong>Presupuesto Diseño</strong>
+	</h3>
 	<p>Ingresar Datos del Cliente</p>
 </center>
 
@@ -10,18 +12,27 @@
 	var cliente = $scope.cliente = {};
 	$scope.tipoClientes=["CORPORATIVO","CONSUMIDOR FINAL"]
     
-	camForm.on('form-loaded', function() {
-    // declaro una variable 'json' nombrada 'cliente' 
+	//objeto para enviar a delegate y usar en modelo cliente
+	camForm.on('form-loaded', function() { 
     camForm.variableManager.createVariable({
         name: 'cliente',
         type: 'Object',
         value: cliente,
 		valueInfo: {
 			serializationDataFormat:'application/json',
-			objectTypeName:'org.camunda.bpm.menini_nicola.mn_proceso_productoMN.modelo.Cliente'
+			objectTypeName:'org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.modelo.Cliente'
 		}
       });
     });
+
+	//json para enviar a otro formulario y usar cliente
+	camForm.on('form-loaded', function() { 
+    camForm.variableManager.createVariable({
+        name: 'clienteJson',
+        type: 'json',
+        value: cliente
+      });
+    });	
 
   </script>
 

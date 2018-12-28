@@ -33,7 +33,4 @@ public interface IFachada {
 	int inserarProducto(VOProducto voProducto);
 
 	int obtenerIdCategoria(String categoria);
-
-
-
 }

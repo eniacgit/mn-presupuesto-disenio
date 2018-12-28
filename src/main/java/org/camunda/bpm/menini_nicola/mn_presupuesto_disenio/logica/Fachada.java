@@ -68,8 +68,7 @@ public class Fachada implements IFachada{
 	public String generarNroCotizacionFechaActual() {
 		DAOPresupuestoDisenio dao = new DAOPresupuestoDisenio();
 		return dao.generarNroCotizacionFechaActual();
-	}
-	
+	}	
 	
 	@Override
 	public int insertarCliente(VOCliente voCliente) {
@@ -80,6 +79,10 @@ public class Fachada implements IFachada{
 		cliente.setEmail(voCliente.getEmail());
 		cliente.setTelefono(voCliente.getTelefono());
 		cliente.setCelular(voCliente.getCelular());		
+		cliente.setRut(voCliente.getRut());
+		cliente.setRazonSocial(voCliente.getRazonSocial());
+		cliente.setTipo(voCliente.getTipo());
+		cliente.setDireccion(voCliente.getDireccion());
 		
 		return dao.insertarCliente(cliente);
 	}
@@ -181,8 +184,7 @@ public class Fachada implements IFachada{
 			String email = accesoBD.obtenerRemitente();
 			String [] arrayEmail = email.split("@");
 			String remitente = arrayEmail[0];
-			String clave = accesoBD.obtenerPasswordRemitente();
-			
+			String clave = accesoBD.obtenerPasswordRemitente();			
 			
 			// Se obtiene el objeto Session. La configuración es para una cuenta de gmail
 			Properties props = new Properties();		

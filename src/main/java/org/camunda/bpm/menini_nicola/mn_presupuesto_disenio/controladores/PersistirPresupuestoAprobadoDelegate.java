@@ -9,6 +9,7 @@ import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.logica.Fachada;
 import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.logica.IFachada;
+import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.modelo.Cliente;
 import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOCliente;
 import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOClientePresupuesto;
 import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOPresupuesto;
@@ -22,13 +23,20 @@ public class PersistirPresupuestoAprobadoDelegate implements JavaDelegate{
 		
 		IFachada iFachada = Fachada.getSingletonInstance();
 		
-		//traer valores del formulario para persistir en tabla mn_cliente
-		VOCliente voCliente = new VOCliente();
-		voCliente.setNombre((String) execution.getVariable("CLIENTE"));
-		voCliente.setCelular((String)execution.getVariable("CELULAR"));
-		voCliente.setTelefono((String)execution.getVariable("TEL"));
-		voCliente.setEmail((String) execution.getVariable("EMAIL"));
+		//traer datos del cliente		
+		Cliente cliente= new Cliente();
+		cliente = (Cliente)execution.getVariable("cliente");
 		
+		//persistir datos del cliente
+		VOCliente voCliente = new VOCliente();
+		voCliente.setNombre(cliente.getNombre());
+		voCliente.setEmail(cliente.getEmail());
+		voCliente.setTelefono(cliente.getTelefono());
+		voCliente.setCelular(cliente.getCelular());
+		voCliente.setTipo(cliente.getTipo());
+		voCliente.setRut(cliente.getRut());
+		voCliente.setRazonSocial(cliente.getRazonSocial());
+		voCliente.setDireccion(cliente.getDireccion());	 
 		
 		LOG.info("\n\n=== mn_cliente ======================================================================");
 		int rowCount = 0;
@@ -61,12 +69,9 @@ public class PersistirPresupuestoAprobadoDelegate implements JavaDelegate{
 		voPresupuesto.setMoneda(moneda);
 		voPresupuesto.setCosto(Float.parseFloat((String)execution.getVariable("PRECIO")));
 		voPresupuesto.setCondicionesVenta((String) execution.getVariable("CONDICIONES"));
-		voPresupuesto.setDescripcion((String) execution.getVariable("DESCRIPCION"));
+		voPresupuesto.setDescripcion((String) execution.getVariable("DESCRIPCION"));		
 		
-		
-		
-		// persistir en tabla mn_cliente_presupuesto
-		
+		// persistir en tabla mn_cliente_presupuesto		
 		rowCount = 0;
 		rowCount = iFachada.insertarPresupuesto(voPresupuesto);
 		
@@ -96,15 +101,12 @@ public class PersistirPresupuestoAprobadoDelegate implements JavaDelegate{
 		voClientePresupuesto.setIdPresupuesto(idPresupuesto);
 		
 		rowCount = 0;
-		rowCount = iFachada.insertarClientePresupuesto(voClientePresupuesto);
-		
-	
+		rowCount = iFachada.insertarClientePresupuesto(voClientePresupuesto);	
 		
 		if (rowCount > 0)
 			LOG.info("\n## Se insertó cliente-presupuesto en la BD.\nCantidad de registros afectados: " + rowCount);
 		else
-			LOG.info("\n## Cantidad de registros afectados: " + rowCount + "\nNo se insertó cliente-presupuesto en la BD");
-		
+			LOG.info("\n## Cantidad de registros afectados: " + rowCount + "\nNo se insertó cliente-presupuesto en la BD");	
 		
 		// persistir datos del producto en mn_producto
 		String nombreProducto = (String)execution.getVariable("PRODUCTO_SELECCIONADO");
@@ -125,11 +127,7 @@ public class PersistirPresupuestoAprobadoDelegate implements JavaDelegate{
 		if (rowCount > 0)
 			LOG.info("\n## Se insertó producto en la BD.\nCantidad de registros afectados: " + rowCount);
 		else
-			LOG.info("\n## Cantidad de registros afectados: " + rowCount + "\nNo se insertó producto en la BD");
-
-		
-		
-			
+			LOG.info("\n## Cantidad de registros afectados: " + rowCount + "\nNo se insertó producto en la BD");			
 	}
 
 }

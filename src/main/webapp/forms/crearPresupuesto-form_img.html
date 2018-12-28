@@ -6,6 +6,15 @@
 <form class="form-horizontal" >
 
   <script cam-script type="text/form-script">	
+
+	camForm.on('form-loaded', function() {
+    camForm.variableManager.fetchVariable('clienteJson');
+    });
+
+    camForm.on('variables-fetched', function() {
+    $scope.cliente = camForm.variableManager.variableValue('clienteJson');
+    });
+	
   </script>
   
   <div class="row">
@@ -38,10 +47,9 @@
   		<div class="control-group">
   			<label for="tipoCliente" class="control-label">Tipo de Cliente</label>
       		<div class="controls">
-      			<select cam-variable-name="tipoCliente" cam-variable-type="String" class="form-control">
-  					<option value="consumidor" checked>CONSUMIDOR FINAL</option>
-  					<option value="corporativo">CORPORATIVO</option>  			
-	  			</select>			
+	  			<input class="form-control"
+	  				   ng-model="cliente.tipo" 
+	  			       readonly></input>			
       		</div>      	
   		</div>  	
   	</div>  

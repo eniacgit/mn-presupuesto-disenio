@@ -1,8 +1,9 @@
-<strong>Proceso ProductoMN</strong>
-
-<p>
-  Respuesta del Cliente
-</p>
+<center>
+	<h3>
+		<strong>Presupuesto Diseño</strong>
+	</h3>
+	<p>Respuesta del Cliente</p>
+</center> 
 
 <form role="form" class="form-horizontal">
 
@@ -14,25 +15,29 @@
     <div class="controls">
     
     	<label for="CLIENTE" class="control-label">Cliente</label>
-    	   <input type="text"
-      		 class= "form-control"
-      		 name="CLIENTE" 
+    	<input 
+      		 class= "form-control" 
              cam-variable-name="CLIENTE"
-             cam-variable-type="String"
-             maxlength=100
-             required
-             ng-model="CLIENTE"
-             readonly
-             class="form-control" />
-                   
-      <br>
-      <label for="rechazado">Cliente rechaza presupuesto</label>
+             readonly />
+             
+        <label for="COTIZACION" class="control-label">Cotización</label>
+  		<input class="form-control"
+      		   cam-variable-name="COTIZACION"        	   
+        	   readonly />
+      	
+      	<label for="PRODUCTO_SELECCIONADO" class="control-label">Producto</label>
+  		<input class="form-control"  
+	       	   cam-variable-name="PRODUCTO_SELECCIONADO"	       	
+	       	   readonly />      		 	     
+             
+      <br>              
+      <label for="rechazar">Rechazado por el cliente</label>
       <input type="checkbox"
              cam-variable-name="rechazado"
              cam-variable-type="Boolean"
              name="rechazado"
              class="form-control" />
-  	</div>
+  	</div>  	
   </div>
   
 </form>
