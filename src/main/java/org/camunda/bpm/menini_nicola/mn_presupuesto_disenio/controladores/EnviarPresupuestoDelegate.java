@@ -1,6 +1,10 @@
 package org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.controladores;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Logger;
@@ -20,6 +24,7 @@ public class EnviarPresupuestoDelegate implements JavaDelegate{
 	@Override
 	public void execute(DelegateExecution execution) throws Exception {		
 		
+			
 		//setear valores value object
 		VOReporte voReporteParametros= new VOReporte(); 
 		voReporteParametros.setNombrePresupuesto((String)execution.getVariable("COTIZACION"));
@@ -37,10 +42,10 @@ public class EnviarPresupuestoDelegate implements JavaDelegate{
 		voReporteParametros.setTipoCliente((String)execution.getVariable("tipoCliente"));
 		voReporteParametros.setMateriales((String)execution.getVariable("MATERIALES"));
 		
-		voReporteParametros.setUrlImagen("https://i0.wp.com/www.arkiplus.com/wp-content/uploads/2014/11/dise%C3%B1ador-muebles.jpg");
+		//voReporteParametros.setUrlImagen("https://i0.wp.com/www.arkiplus.com/wp-content/uploads/2014/11/dise%C3%B1ador-muebles.jpg");
 		
-		IFachada iFachada = Fachada.getSingletonInstance();
-		iFachada.generarReporte(voReporteParametros);
+		//IFachada iFachada = Fachada.getSingletonInstance();
+		//iFachada.generarReporte(voReporteParametros);
 		
 				
 		//enviar presupuesto por email
@@ -51,7 +56,33 @@ public class EnviarPresupuestoDelegate implements JavaDelegate{
 						
 		String nombreArchivoAdjunto="Cotizacion_DISENIO_" + voReporteParametros.getNombrePresupuesto() + "_" + voReporteParametros.getCliente().replace(' ' , '_') +".pdf" ;
 		
-		LOG.info("\n## REPORTE GENERADO CON EXITO (" + nombreArchivoAdjunto + ")");
+		//LOG.info("\n## REPORTE GENERADO CON EXITO (" + nombreArchivoAdjunto + ")");
+		
+		InputStream imgAdjunta = (ByteArrayInputStream)execution.getVariable("IMG_PRODUCTO");
+		String nombreImagen = "IMG_"+ voReporteParametros.getNombrePresupuesto() + "_" + voReporteParametros.getCliente().replace(' ' , '_') +".png"; 
+		File newFile = new File(rutaArchivoAdjunto + nombreImagen);
+		FileOutputStream fos = new FileOutputStream(newFile);
+		int data;
+		while ((data=imgAdjunta.read())!=-1){
+			char ch = (char)data;
+			fos.write(ch);			
+		}
+		fos.flush();
+		fos.close();	
+		
+		// obtengo imagen del servidor de imagenes de tomcat ( para configurarlo ver: https://stackoverrun.com/es/q/60423) 
+		voReporteParametros.setUrlImagen("http://localhost:8080/mngest/images/" + nombreImagen);
+		execution.setVariable("rutaImagen",voReporteParametros.getUrlImagen());	
+		
+		
+		
+		LOG.info("\n## --------------------------------------------------------");
+		LOG.info("\n\n## IMG: " + rutaArchivoAdjunto + nombreImagen);
+		
+		
+		IFachada iFachada = Fachada.getSingletonInstance();
+		iFachada.generarReporte(voReporteParametros);
+		
 		
 		
 		

@@ -7,13 +7,23 @@
 
 <form role="form" class="form-horizontal">
 
- <script cam-script type="text/form-script">
- 
- </script>
+
+   <script cam-script type="text/form-script">	
+
+	camForm.on('form-loaded', function() {
+    camForm.variableManager.fetchVariable('rutaImagen');
+    });
+
+    camForm.on('variables-fetched', function() {
+    $scope.rutaImagen = camForm.variableManager.variableValue('rutaImagen');
+    });
+	
+  </script>
+
 
   <div class="control-group">
-    <div class="controls">
-    
+    <div class="controls">    		
+    	    
     	<label for="CLIENTE" class="control-label">Cliente</label>
     	<input 
       		 class= "form-control" 
@@ -30,6 +40,10 @@
 	       	   cam-variable-name="PRODUCTO_SELECCIONADO"	       	
 	       	   readonly />      		 	     
              
+      <br>
+      <center>
+      	<img src="{{rutaImagen}}" class="img-responsive"></img>
+      </center>
       <br>              
       <label for="rechazar">Rechazado por el cliente</label>
       <input type="checkbox"
