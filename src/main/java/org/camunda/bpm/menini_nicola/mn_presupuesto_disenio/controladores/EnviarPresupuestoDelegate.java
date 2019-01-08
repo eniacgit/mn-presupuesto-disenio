@@ -44,8 +44,8 @@ public class EnviarPresupuestoDelegate implements JavaDelegate{
 		
 		//voReporteParametros.setUrlImagen("https://i0.wp.com/www.arkiplus.com/wp-content/uploads/2014/11/dise%C3%B1ador-muebles.jpg");
 		
-		//IFachada iFachada = Fachada.getSingletonInstance();
-		//iFachada.generarReporte(voReporteParametros);
+		IFachada iFachada = Fachada.getSingletonInstance();
+		iFachada.generarReporte(voReporteParametros);
 		
 				
 		//enviar presupuesto por email
@@ -80,7 +80,7 @@ public class EnviarPresupuestoDelegate implements JavaDelegate{
 		LOG.info("\n\n## IMG: " + rutaArchivoAdjunto + nombreImagen);
 		
 		
-		IFachada iFachada = Fachada.getSingletonInstance();
+		//IFachada iFachada = Fachada.getSingletonInstance();
 		iFachada.generarReporte(voReporteParametros);
 		
 		

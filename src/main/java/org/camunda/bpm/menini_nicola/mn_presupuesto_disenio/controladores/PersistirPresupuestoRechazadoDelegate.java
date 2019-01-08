@@ -16,9 +16,9 @@ import org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.valueObjects.VOProdu
 
 
 
-public class PersistirPresupuestoNoAprobadoDelegate implements JavaDelegate{
+public class PersistirPresupuestoRechazadoDelegate implements JavaDelegate{
 	
-	private final static Logger LOG = Logger.getLogger(PersistirPresupuestoNoAprobadoDelegate.class.getName());
+	private final static Logger LOG = Logger.getLogger(PersistirPresupuestoRechazadoDelegate.class.getName());
 
 	@Override
 	public void execute(DelegateExecution execution) throws Exception {
@@ -85,7 +85,7 @@ public class PersistirPresupuestoNoAprobadoDelegate implements JavaDelegate{
 		
 		// estado:
 		//	1 = aprobado
-		//  0 = NO aprobado
+		//  0 = rechazado
 		byte estado = 0;
 		
 		VOClientePresupuesto voClientePresupuesto = new VOClientePresupuesto();

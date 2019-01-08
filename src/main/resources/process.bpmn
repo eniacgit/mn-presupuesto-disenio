@@ -62,7 +62,7 @@
       <bpmn:incoming>SequenceFlow_0zf79i5</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_0zf79i5" sourceRef="Task_0jh36t3" targetRef="EndEvent_1fetjz1" />
-    <bpmn:serviceTask id="Task_0jh36t3" name="Persistir presupuesto no aprobado en la BD" camunda:class="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.controladores.PersistirPresupuestoNoAprobadoDelegate">
+    <bpmn:serviceTask id="Task_0jh36t3" name="Persistir presupuesto no aprobado en la BD" camunda:class="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.controladores.PersistirPresupuestoRechazadoDelegate">
       <bpmn:incoming>SequenceFlow_14l83nr</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0zf79i5</bpmn:outgoing>
     </bpmn:serviceTask>

@@ -26,9 +26,9 @@
     </display>  
   </class>  
   <class id="3" language="java" 
-    name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.controladores.PersistirPresupuestoNoAprobadoDelegate" 
+    name="org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.controladores.PersistirPresupuestoRechazadoDelegate" 
     project="mn_presupuesto_disenio" 
-    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/controladores/PersistirPresupuestoNoAprobadoDelegate.java" 
+    file="/mn_presupuesto_disenio/src/main/java/org/camunda/bpm/menini_nicola/mn_presupuesto_disenio/controladores/PersistirPresupuestoRechazadoDelegate.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="113" width="309" x="617" y="12"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -262,24 +262,32 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="24">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="25" name="lstArchivosAdjuntos"/>      
-      <multiplicity id="26" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="27">    
+  <realization id="24">    
     <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="5"/>  
   </realization>  
-  <association id="28">    
+  <association id="25">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="29" name="fachada"/>      
-      <multiplicity id="30" minimum="0" maximum="1"/>    
+      <attribute id="26" name="fachada">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="27" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="28">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="29" name="lstArchivosAdjuntos">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="30" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
