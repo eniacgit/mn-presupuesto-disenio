@@ -10,6 +10,7 @@ public class Presupuesto {
 	protected float costo;
 	protected String condicionesVenta;
 	protected String descripcion;
+	private int unidades;
 	
 	public Presupuesto() {
 		super();
@@ -17,7 +18,7 @@ public class Presupuesto {
 	}
 
 	public Presupuesto(String cotizacion, String fecha, String moneda, float costo, String condicionesVenta,
-			String descripcion) {
+			String descripcion, int unidades) {
 		super();
 		this.cotizacion = cotizacion;
 		this.fecha = fecha;
@@ -25,6 +26,7 @@ public class Presupuesto {
 		this.costo = costo;
 		this.condicionesVenta = condicionesVenta;
 		this.descripcion = descripcion;
+		this.unidades = unidades;
 	}
 
 	public String getCotizacion() {
@@ -73,5 +75,13 @@ public class Presupuesto {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}	
+	}
+
+	public int getUnidades() {
+		return unidades;
+	}
+
+	public void setUnidades(int unidades) {
+		this.unidades = unidades;
+	}		
 }

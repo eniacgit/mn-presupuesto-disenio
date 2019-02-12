@@ -69,7 +69,8 @@ public class PersistirPresupuestoAprobadoDelegate implements JavaDelegate{
 		voPresupuesto.setMoneda(moneda);
 		voPresupuesto.setCosto(Float.parseFloat((String)execution.getVariable("PRECIO")));
 		voPresupuesto.setCondicionesVenta((String) execution.getVariable("CONDICIONES"));
-		voPresupuesto.setDescripcion((String) execution.getVariable("DESCRIPCION"));		
+		voPresupuesto.setDescripcion((String) execution.getVariable("DESCRIPCION"));	
+		voPresupuesto.setUnidades(1); // por defecto es 1 producto
 		
 		// persistir en tabla mn_cliente_presupuesto		
 		rowCount = 0;

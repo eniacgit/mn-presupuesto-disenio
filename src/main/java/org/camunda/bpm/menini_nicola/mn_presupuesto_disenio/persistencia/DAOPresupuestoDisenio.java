@@ -88,6 +88,7 @@ public class DAOPresupuestoDisenio {
 			pstmt.setFloat(4, presupuesto.getCosto());
 			pstmt.setString(5, presupuesto.getCondicionesVenta());
 			pstmt.setString(6, presupuesto.getDescripcion());
+			pstmt.setInt(7, presupuesto.getUnidades());
 			rowCount = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			Log.error(e + "EEROR 1");

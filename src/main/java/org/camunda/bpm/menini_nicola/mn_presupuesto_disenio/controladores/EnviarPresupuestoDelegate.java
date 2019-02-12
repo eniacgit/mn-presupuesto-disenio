@@ -47,16 +47,21 @@ public class EnviarPresupuestoDelegate implements JavaDelegate{
 		IFachada iFachada = Fachada.getSingletonInstance();
 		iFachada.generarReporte(voReporteParametros);
 		
-				
-		//enviar presupuesto por email
+
+		LOG.info("\n\n## PRESUPUESTO DISENIO");
 		
+		//enviar presupuesto por email		
 		Properties p = new Properties();
 		p.load(new FileInputStream("config/parametros.txt"));
 		String rutaArchivoAdjunto = p.getProperty("carpeta_reportes");
+		
+		
+		
+		
 						
 		String nombreArchivoAdjunto="Cotizacion_DISENIO_" + voReporteParametros.getNombrePresupuesto() + "_" + voReporteParametros.getCliente().replace(' ' , '_') +".pdf" ;
 		
-		//LOG.info("\n## REPORTE GENERADO CON EXITO (" + nombreArchivoAdjunto + ")");
+		LOG.info("\n## REPORTE GENERADO CON EXITO (" + nombreArchivoAdjunto + ")");
 		
 		InputStream imgAdjunta = (ByteArrayInputStream)execution.getVariable("IMG_PRODUCTO");
 		String nombreImagen = "IMG_"+ voReporteParametros.getNombrePresupuesto() + "_" + voReporteParametros.getCliente().replace(' ' , '_') +".png"; 

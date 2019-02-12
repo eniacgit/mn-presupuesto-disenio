@@ -10,6 +10,8 @@ public class VOPresupuesto {
 	private float costo;
 	private String condicionesVenta;
 	private String descripcion;
+	private int unidades;  // TIENE QUE GUARDAR 1 EN LA mn_presupuesto
+	
 	
 	public VOPresupuesto() {
 		super();
@@ -17,7 +19,7 @@ public class VOPresupuesto {
 	}
 
 	public VOPresupuesto(int idPresupuesto, String cotizacion, String fecha, String moneda, float costo,
-			String condicionesVenta, String descripcion) {
+			String condicionesVenta, String descripcion, int unidades) {
 		super();
 		this.idPresupuesto = idPresupuesto;
 		this.cotizacion = cotizacion;
@@ -26,6 +28,7 @@ public class VOPresupuesto {
 		this.costo = costo;
 		this.condicionesVenta = condicionesVenta;
 		this.descripcion = descripcion;
+		this.unidades = unidades;
 	}
 
 	public int getIdPresupuesto() {
@@ -82,6 +85,14 @@ public class VOPresupuesto {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public int getUnidades() {
+		return unidades;
+	}
+
+	public void setUnidades(int unidades) {
+		this.unidades = unidades;
 	}
 	
 	

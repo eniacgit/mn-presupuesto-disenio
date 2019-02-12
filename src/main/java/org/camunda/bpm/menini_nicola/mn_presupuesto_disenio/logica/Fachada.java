@@ -231,6 +231,8 @@ public class Fachada implements IFachada{
 		presupuesto.setCosto(voPresupuesto.getCosto());
 		presupuesto.setCondicionesVenta(voPresupuesto.getCondicionesVenta());
 		presupuesto.setDescripcion(voPresupuesto.getDescripcion());
+		presupuesto.setUnidades(voPresupuesto.getUnidades());
+		
 		
 		return dao.insertarPresupuesto(presupuesto);
 	}
