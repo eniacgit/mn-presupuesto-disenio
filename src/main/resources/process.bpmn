@@ -86,6 +86,13 @@
       <bpmn:text>Se almacena el presupuesto pdf GENERADO en la carpeta REPORTES</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:association id="Association_0ppf2u1" sourceRef="Task_0pfz5tf" targetRef="TextAnnotation_0ypj9id" />
+    <bpmn:textAnnotation id="TextAnnotation_0yryruh">
+      <bpmn:text></bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0lefc3w">
+      <bpmn:text>Se mueve el presupuesto pdf y la imagen a la carpeta RECHAZADOS</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1bas7fb" sourceRef="Task_0jh36t3" targetRef="TextAnnotation_0lefc3w" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="mn_presupuesto_disenio">
@@ -241,6 +248,16 @@
       <bpmndi:BPMNEdge id="Association_0ppf2u1_di" bpmnElement="Association_0ppf2u1">
         <di:waypoint x="763" y="160" />
         <di:waypoint x="796" y="215" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_0yryruh_di" bpmnElement="TextAnnotation_0yryruh">
+        <dc:Bounds x="1233" y="116" width="100" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0lefc3w_di" bpmnElement="TextAnnotation_0lefc3w">
+        <dc:Bounds x="1112" y="363" width="142" height="64" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1bas7fb_di" bpmnElement="Association_1bas7fb">
+        <di:waypoint x="1183" y="276" />
+        <di:waypoint x="1183" y="363" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

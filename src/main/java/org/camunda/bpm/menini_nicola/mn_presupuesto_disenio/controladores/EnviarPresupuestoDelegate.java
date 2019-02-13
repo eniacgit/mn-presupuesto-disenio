@@ -53,11 +53,7 @@ public class EnviarPresupuestoDelegate implements JavaDelegate{
 		//enviar presupuesto por email		
 		Properties p = new Properties();
 		p.load(new FileInputStream("config/parametros.txt"));
-		String rutaArchivoAdjunto = p.getProperty("carpeta_reportes");
-		
-		
-		
-		
+		String rutaArchivoAdjunto = p.getProperty("carpeta_reportes");		
 						
 		String nombreArchivoAdjunto="Cotizacion_DISENIO_" + voReporteParametros.getNombrePresupuesto() + "_" + voReporteParametros.getCliente().replace(' ' , '_') +".pdf" ;
 		
@@ -75,11 +71,17 @@ public class EnviarPresupuestoDelegate implements JavaDelegate{
 		fos.flush();
 		fos.close();	
 		
+				
 		// obtengo imagen del servidor de imagenes de tomcat ( para configurarlo ver: https://stackoverrun.com/es/q/60423) 
 		voReporteParametros.setUrlImagen("http://localhost:8080/mngest/images/" + nombreImagen);
 		execution.setVariable("rutaImagen",voReporteParametros.getUrlImagen());	
 		
 		
+		// almaceno rutas de archivo pdf para que mas adelante se puedan enviar a la carpeta
+		// rechazados si corresponde				
+		execution.setVariable("nombreReportePDF", nombreArchivoAdjunto);
+		execution.setVariable("nombreImagen", nombreImagen);
+		execution.setVariable("rutaArchivoAdjunto", rutaArchivoAdjunto);
 		
 		LOG.info("\n## --------------------------------------------------------");
 		LOG.info("\n\n## IMG: " + rutaArchivoAdjunto + nombreImagen);

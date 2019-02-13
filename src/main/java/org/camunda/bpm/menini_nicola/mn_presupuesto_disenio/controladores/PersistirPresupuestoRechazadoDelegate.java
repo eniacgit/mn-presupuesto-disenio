@@ -1,5 +1,10 @@
 package org.camunda.bpm.menini_nicola.mn_presupuesto_disenio.controladores;
 
+import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -122,7 +127,32 @@ public class PersistirPresupuestoRechazadoDelegate implements JavaDelegate{
 		if (rowCount > 0)
 			LOG.info("\n## Se insertó producto en la BD.\nCantidad de registros afectados: " + rowCount);
 		else
-			LOG.info("\n## Cantidad de registros afectados: " + rowCount + "\nNo se insertó producto en la BD");			
+			LOG.info("\n## Cantidad de registros afectados: " + rowCount + "\nNo se insertó producto en la BD");
+		
+		
+		// muevo reportePDF y cronograma a carpeta RECHAZADOS		
+		String rutaArchivos = (String)execution.getVariable("rutaArchivoAdjunto");
+		String nombreReportePDF = (String)execution.getVariable("nombreReportePDF");
+		String nombreImagen = (String)execution.getVariable("nombreImagen");
+		
+		moverArchivo(rutaArchivos + nombreReportePDF, rutaArchivos+"/RECHAZADOS/" + nombreReportePDF);
+		moverArchivo(rutaArchivos + nombreImagen, rutaArchivos+"/RECHAZADOS/" + nombreImagen);
+		
+		
+	}
+	
+	// FUNCIONES AUXILIARES
+	
+	private static void moverArchivo(String origen, String destino) {
+		Path origenPath = FileSystems.getDefault().getPath(origen);
+		Path destinoPath = FileSystems.getDefault().getPath(destino);
+		
+		try {
+			Files.move(origenPath, destinoPath, StandardCopyOption.REPLACE_EXISTING);			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 	}
 
 }
