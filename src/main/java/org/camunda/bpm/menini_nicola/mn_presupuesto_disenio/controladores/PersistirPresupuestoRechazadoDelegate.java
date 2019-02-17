@@ -141,8 +141,7 @@ public class PersistirPresupuestoRechazadoDelegate implements JavaDelegate{
 		
 	}
 	
-	// FUNCIONES AUXILIARES
-	
+	// FUNCIONES AUXILIARES	
 	private static void moverArchivo(String origen, String destino) {
 		Path origenPath = FileSystems.getDefault().getPath(origen);
 		Path destinoPath = FileSystems.getDefault().getPath(destino);
